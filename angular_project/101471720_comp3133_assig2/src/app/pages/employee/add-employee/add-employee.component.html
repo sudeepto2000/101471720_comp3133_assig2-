@@ -1,0 +1,58 @@
+<div class="container d-flex justify-content-center align-items-center min-vh-90">
+    <div class="card shadow p-4" style="width: 100%; max-width: 800px; border-radius: 1rem;">
+        <div class="bg-dark text-center p-2 rounded">
+            <h2 class="text-center mb-4 text-white">Add Employee</h2>
+        </div>
+        <hr>
+        <form (ngSubmit)="onAdd()">
+            <div *ngIf="error" class="text-danger text-center mt-3">{{ error }}</div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label>First Name</label>
+                    <input [(ngModel)]="first_name" name="first_name" class="form-control" required />
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label>Last Name</label>
+                    <input [(ngModel)]="last_name" name="last_name" class="form-control" required />
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label>Email</label>
+                    <input type="email" [(ngModel)]="email" name="email" class="form-control" required />
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label>Gender</label>
+                    <select [(ngModel)]="gender" name="gender" class="form-control" required>
+                        <option value="">Select</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label>Designation</label>
+                    <input [(ngModel)]="designation" name="designation" class="form-control" required />
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label>Salary</label>
+                    <input type="number" [(ngModel)]="salary" name="salary" class="form-control" required
+                        minlength="4" />
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label>Date of Joining</label>
+                    <input type="date" [(ngModel)]="date_of_joining" name="date_of_joining" class="form-control"
+                        required />
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label>Department</label>
+                    <input [(ngModel)]="department" name="department" class="form-control" required />
+                </div>
+                <div class="col-md-12 mb-3">
+                    <label>Employee Photo URL</label>
+                    <input [(ngModel)]="employee_photo" name="employee_photo" class="form-control" />
+                </div>
+            </div>
+            <hr>
+            <button type="submit" class="btn btn-success w-100">Add Employee</button>
+        </form>
+    </div>
+</div>
